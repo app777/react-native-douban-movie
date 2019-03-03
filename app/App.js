@@ -10,12 +10,16 @@
 import React, {Component} from 'react';
 import {createStackNavigator, createBottomTabNavigator, createAppContainer} from 'react-navigation';
 
-import Tabm from "./views/Tabm";
+import Tab1 from "./views/Tab1";
+import Tab2 from "./views/Tab2";
 import About from "./views/About";
 
 const AppTabNavigator = createBottomTabNavigator({
-	"电影列表":{
-		screen:Tabm
+	"正在热映":{
+		screen:Tab1
+	},
+	"Top250":{
+		screen:Tab2
 	},
 	"关于":{
 		screen:About

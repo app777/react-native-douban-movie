@@ -3,12 +3,12 @@ import {View, Text, StyleSheet, Image, Button, FlatList, Alert, TouchableOpacity
 
 import Detail from "./Detail";
 
-var API_URL = 'https://api.douban.com/v2/movie/in_theaters';
+var API_URL = 'https://api.douban.com/v2/movie/top250';
 
 export default class Movies extends Component {
 	
 	static navigationOptions = {
-		title: '正在热映',
+		title: 'Top250',
 		headerStyle:{
 			backgroundColor:'#00b51d'
 		},
@@ -52,7 +52,6 @@ export default class Movies extends Component {
 		return (
 		
 			<View style = {styles.container}>
-			<View>
 			<TouchableOpacity
 				activeOpacity = {0.5}
 				onPress = {() => this.itemClick(item, index)}
@@ -60,12 +59,9 @@ export default class Movies extends Component {
 				<Image source = {{ uri: item.images.medium }}
 					style = {styles.thumb} />
 			</TouchableOpacity>
-			</View>
-			<View>
 					<Text>{index}</Text>
 				<Text>{item.title}</Text>
 				<Text>{item.year}</Text>
-				</View>
 			</View>
 		);
 	}
